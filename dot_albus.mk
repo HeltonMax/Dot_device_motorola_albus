@@ -16,18 +16,29 @@
 # Inherit from albus device
 $(call inherit-product, device/motorola/albus/device.mk)
 
-# Inherit some common Pixel Experience stuff.
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+# Inherit some common Droid on Time stuff.
+$(call inherit-product, vendor/dot/config/common.mk)
 TARGET_INCLUDE_LIVE_WALLPAPERS := false
 TARGET_BOOT_ANIMATION_RES := 1080
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_BRAND := motorola
-PRODUCT_MANUFACTURER := motorola
-PRODUCT_NAME := aosp_albus
+PRODUCT_NAME := dot_albus
 PRODUCT_DEVICE := albus
+PRODUCT_BRAND := motorola
 PRODUCT_MODEL := Moto Z2 Play
+PRODUCT_MANUFACTURER := Motorola
 
-# Build Fingerprint
+BUILD_FINGERPRINT := "google/sunfish/sunfish:11/RQ1A.210205.004/7038034:user/release-keys"
+
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="albus-user 9 PPS29.133-30 ab8b4 release-keys"
+    PRIVATE_BUILD_DESC="sunfish-user 11 RQ1A.210205.004 7038034 release-keys" \
+    PRODUCT_NAME="albus" \
+    TARGET_DEVICE="albus"
+
+PRODUCT_GMS_CLIENTID_BASE := android-motorola
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.fingerprint=$(BUILD_FINGERPRINT)
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.fingerprint=$(BUILD_FINGERPRINT)

@@ -15,9 +15,9 @@
 
 # inherit Moto Z2 play device config
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_albus.mk
+    $(LOCAL_DIR)/dot_albus.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_albus-user \
-    aosp_albus-userdebug \
-    aosp_albus-eng
+    dot_albus-user \
+    dot_albus-userdebug \
+    dot_albus-eng
